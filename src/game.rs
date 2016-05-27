@@ -28,7 +28,7 @@ impl<I: Num + Bounded + Ord + CheckedAdd + CheckedSub + One + Copy + Hash, T: En
         &mut self.world
     }
 
-    pub fn run<W>(&mut self, manager: &mut Node<I>, window: &mut PistonWindow<W>) where W: BuildFromWindowSettings + Window + AdvancedWindow + OpenGLWindow, W::Event: GenericEvent {
+    pub fn run<W>(&mut self, manager: &mut Node<I>, window: &mut PistonWindow<W>) where W: /*BuildFromWindowSettings + Window +*/ AdvancedWindow + OpenGLWindow, W::Event: GenericEvent {
         while let Some(e) = window.next() {
             window.draw_2d(&e, |c, g| {
                 clear([0.0, 0.0, 0.0, 1.0], g);
